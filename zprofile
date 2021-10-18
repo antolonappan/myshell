@@ -28,7 +28,7 @@ rootcontabo="root@5.189.175.156"
 antocontabo="anto@5.189.175.156"
 
 # Git Folders
-git_folders=('workspace/s4bird','workspace/Simons_Array) #Used by 'check_all_gits()'
+folders=() #Used by 'check_all_gits()'
 
 # SHOPT - Not needed in zsh
 #shopt -s autocd
@@ -136,7 +136,7 @@ Set_sissa_gitlab(){
 check_all_gits(){
     # Check all Git folders status
     cd /User/anto/Workspace
-    for i in "${git_folders[@]}"; do
+    for i in "${folders[@]}"; do
         cd $i
         if [ -n "$(git status --porcelain)" ]; then
             echo "$i: Not Committed ";
